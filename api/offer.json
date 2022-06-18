@@ -1,0 +1,41 @@
+{
+    "code": 200,
+    "data": [
+      {
+        "offer_code": "BUY 2 GET 1",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "21-10-2021"
+      },
+      {
+        "offer_code": "10 TK OFF",
+        "location": "Doctor Goli, Dhaka",
+        "offer_text": "10 TK OFF",
+        "validity": "11-03-2021"
+      },
+      {
+        "offer_code": "100 TK OFF",
+        "location": "New Eskaton, Dhaka",
+        "offer_text": "BUY 1 GET 1",
+        "validity": "21-05-2022"
+      },
+      {
+        "offer_code": "BUY 2 GET 2",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA500",
+        "location": "Jahangir Gate, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BUY 3 GET 1",
+        "location": "Jahangir Gate, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      }
+    ]
+  }

@@ -1,0 +1,95 @@
+{
+    "code": 200,
+    "data": [
+      {
+        "offer_code": "BASHUNDHARA100",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "21-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA200",
+        "location": "Doctor Goli, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "11-03-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA300",
+        "location": "New Eskaton, Dhaka",
+        "offer_text": "BUY 1 GET 1",
+        "validity": "21-05-2022"
+      },
+      {
+        "offer_code": "BASHUNDHARA400",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA500",
+        "location": "Jahangir Gate, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA600",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "21-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA700",
+        "location": "Doctor Goli, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "11-03-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA800",
+        "location": "New Eskaton, Dhaka",
+        "offer_text": "BUY 1 GET 1",
+        "validity": "21-05-2022"
+      },
+      {
+        "offer_code": "BASHUNDHARA900",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA1000",
+        "location": "Jahangir Gate, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA1100",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "21-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA1200",
+        "location": "Doctor Goli, Dhaka",
+        "offer_text": "BUY 2 GET 1",
+        "validity": "11-03-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA1300",
+        "location": "New Eskaton, Dhaka",
+        "offer_text": "BUY 1 GET 1",
+        "validity": "21-05-2022"
+      },
+      {
+        "offer_code": "BASHUNDHARA1400",
+        "location": "Mirpur, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      },
+      {
+        "offer_code": "BASHUNDHARA1500",
+        "location": "Jahangir Gate, Dhaka",
+        "offer_text": "BUY 2 GET 2",
+        "validity": "31-10-2021"
+      }
+    ]
+  }
