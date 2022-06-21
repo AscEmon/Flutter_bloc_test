@@ -12,8 +12,9 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
   TextEditingController loginPhoneNumber = TextEditingController();
   TextEditingController loginPassword = TextEditingController();
   bool obscureText = false;
+  bool isTextEditingEmpty = false;
 
-  SignInBloc() : super(SignInState(allPostStatus: AllPostStatus.initial)) {
+  SignInBloc() : super(SignInState()) {
     on<SignInSubmitEvent>(_signInFunction);
     on<PasswordShowEvent>(_toggle);
     on<ValidateEvent>(_Validated);
@@ -33,30 +34,29 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         emit(SignInState(allPostStatus: AllPostStatus.loading));
         map.log();
         await Future.delayed(const Duration(seconds: 2));
-        emit(SignInState(allPostStatus: AllPostStatus.success));
         loginPhoneNumber.clear();
-        loginPassword.clear();
+        loginPassword.clear(); 
+        emit(state.copyWith(allPostStatus: AllPostStatus.success));
+        "isCalled".log();
       }
     } on Exception catch (e) {
       e.log();
-      emit(SignInState(allPostStatus: AllPostStatus.error));
+      emit(state.copyWith(allPostStatus: AllPostStatus.error));
     }
   }
 
   void _toggle(SignInEvent signInEvent, Emitter<SignInState> emit) {
     obscureText = !obscureText;
     obscureText.log();
-    emit(SignInState(passwordShow: obscureText));
+    emit(state.copyWith(passwordShow: obscureText));
   }
 
   void _Validated(SignInEvent signInEvent, Emitter<SignInState> emit) {
-    loginPhoneNumber.addListener(
-      () {
-        if (loginPhoneNumber.text.isNotEmpty && loginPassword.text.isNotEmpty) {
-          emit(SignInState(isValidated: true));
-        }
-      },
-    );
+    if (loginPhoneNumber.text.isNotEmpty && loginPassword.text.isNotEmpty) {
+      emit(state.copyWith(isValidated: true));
+    } else {
+      emit(state.copyWith(isValidated: false));
+    }
   }
 
   @override
@@ -64,6 +64,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
     // TODO: implement close
     loginPassword.dispose();
     loginPhoneNumber.dispose();
+    formKey.currentState?.dispose();
     return super.close();
   }
 }

@@ -1,6 +1,5 @@
 abstract class SignInEvent {}
 
-class SignInFormValidationEvent extends SignInEvent {}
 
 class SignInSubmitEvent extends SignInEvent {}
 

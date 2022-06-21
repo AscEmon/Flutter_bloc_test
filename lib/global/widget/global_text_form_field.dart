@@ -16,6 +16,7 @@ class GlobalTextFormField extends StatelessWidget {
   TextStyle? hintStyle;
   TextStyle? style;
   int? line;
+  void Function(String)? onChanged;
   String? initialValue;
 
   GlobalTextFormField({
@@ -33,6 +34,7 @@ class GlobalTextFormField extends StatelessWidget {
     this.autovalidateMode,
     this.readOnly = false,
     this.hintText,
+    this.onChanged,
     this.hintStyle = const TextStyle(
       color: Color(0xff808790),
       fontSize: 16,
@@ -59,6 +61,7 @@ class GlobalTextFormField extends StatelessWidget {
       obscureText: obscureText,
       obscuringCharacter: '*',
       controller: controller,
+      onChanged: onChanged,
       cursorColor: Colors.black,
       keyboardType: textInputType,
       maxLength: maxlength,

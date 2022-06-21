@@ -24,7 +24,7 @@ class FormPart extends StatelessWidget {
             child: Column(
               children: [
                 Form(
-                  key: BlocProvider.of<SignInBloc>(context).formKey,
+                  key: context.read<SignInBloc>().formKey,
                   child: Column(
                     children: [
                       Padding(
@@ -35,6 +35,9 @@ class FormPart extends StatelessWidget {
                               context.read<SignInBloc>().loginPhoneNumber,
                           line: 1,
                           hintText: "Phone Number",
+                          onChanged: (value) {
+                            context.read<SignInBloc>().add(ValidateEvent());
+                          },
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           textInputType: TextInputType.number,
                           maxlength: 11,
@@ -59,16 +62,18 @@ class FormPart extends StatelessWidget {
                                   context.read<SignInBloc>().loginPassword,
                               obscureText: state.passwordShow,
                               line: 1,
+                              onChanged: (value) {
+                                context.read<SignInBloc>().add(ValidateEvent());
+                              },
                               hintText: "Enter Password",
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
                               textInputType: TextInputType.text,
                               suffixIcon: InkWell(
                                   onTap: () {
-                                    BlocProvider.of<SignInBloc>(context)
+                                    context
+                                        .read<SignInBloc>()
                                         .add(PasswordShowEvent());
-                                           BlocProvider.of<SignInBloc>(context)
-                                        .add(ValidateEvent());
                                   },
                                   child: Icon(
                                     state.passwordShow
@@ -105,18 +110,6 @@ class FormPart extends StatelessWidget {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(15)),
                                 color: state.isValidated
-                                    //  (context
-                                    //                 .watch<SignInBloc>()
-                                    //                 .loginPhoneNumber
-                                    //                 .text
-                                    //                 .isNotEmpty ==
-                                    //             true &&
-                                    //         context
-                                    //                 .watch<SignInBloc>()
-                                    //                 .loginPassword
-                                    //                 .text
-                                    //                 .isNotEmpty ==
-                                    //             true)
                                     ? Colors.red
                                     : Color(0xffbcbcbc),
                               ),
@@ -141,7 +134,6 @@ class FormPart extends StatelessWidget {
                         } else if (state.allPostStatus.isError) {
                           Navigation.pop(context);
                         } else if (state.allPostStatus.isSuccess) {
-                          Navigation.pop(context);
                           GetScreen().pushAndRemoveUntil(context);
                         }
                       }),
